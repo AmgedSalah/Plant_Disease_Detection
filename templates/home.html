@@ -1,0 +1,18 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plant Disease Detection</title>
+  </head>
+  <body>
+    <h1>Welcome to the Plant Disease Detection System</h1>
+    {% if result %}
+    <p><strong>Prediction:</strong> {{ prediction }}</p>
+    <img src="{{ imagepath }}" width="300" />
+    {% endif %}
+    <form action="/upload/" method="post" enctype="multipart/form-data">
+      <input type="file" name="img" accept="image/*" />
+      <input type="submit" value="Upload and Predict" />
+    </form>
+  </body>
+</html>
